@@ -39,7 +39,7 @@
 定义布局文件
 ```
 1、实例化组件
-	NinePalaceImageView ngiv1 = findViewById(R.id.ngiv1);
+	NinePalaceImageView npiv1 = findViewById(R.id.npiv1);
 ```
 
 ```
@@ -47,7 +47,7 @@
 	NinePalaceImageViewAdapter adapter = new NinePalaceImageViewAdapter<String>() {
             @Override
             protected void onDisplayImage(Context context, ImageView imageView, String s) {
-                Glide.with(MainActivity.this).load(s).into(imageView);
+                Glide.with(this).load(s).into(imageView);
             }
 
             //重写该方法自定义生成ImageView方式，用于九宫格头像中的一个个图片控件，可以设置ScaleType等属性
@@ -61,7 +61,7 @@
 ```
 3、加载适配器、设置数据
 	npiv1.setAdapter(adapter);
-	npiv1.setImagesData(Arrays.asList(IMG_URL_ARR)); 
+	npiv1.setImagesData(mDatas); 
 ```
 
       
